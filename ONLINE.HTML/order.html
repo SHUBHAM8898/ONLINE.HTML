@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Enter your delivery address for Bajrang Fashion orders.">
+    <meta name="keywords" content="Bajrang Fashion, delivery address, shipping information, Indian fashion">
+    <meta name="author" content="Bajrang Fashion">
+    <title>BAJRANG FASHION - Delivery Address</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Arial', Helvetica, sans-serif;
+            background-color: #F5F5F5;
+            color: #1A2B4A;
+            margin: 0;
+        }
+
+        /* Header Styling */
+        .main-header {
+            background: #1A2B4A;
+            color: #D4A017;
+            padding: 20px;
+            text-align: center;
+            animation: slideInDown 0.8s ease-in-out;
+        }
+
+        .main-header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Menu Styling */
+        .header-menu {
+            background: rgba(26, 43, 74, 0.9);
+            padding: 10px 0;
+        }
+
+        .header-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .header-menu ul li {
+            margin: 0 15px;
+        }
+
+        .header-menu ul li a {
+            color: #F5F5F5;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .header-menu ul li a:hover,
+        .header-menu ul li a.active {
+            background: #D4A017;
+            color: #1A2B4A;
+            border-radius: 5px;
+        }
+
+        /* Address Form Styling */
+        .address-section {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .address-section h1 {
+            color: #1A2B4A;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .address-section label {
+            font-weight: bold;
+            color: #1A2B4A;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .address-section input,
+        .address-section textarea,
+        .address-section select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #6B7280;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: #F5F5F5;
+            color: #1A2B4A;
+        }
+
+        .address-section textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .address-section a.save-address-btn {
+            background: #1A2B4A;
+            color: #F5F5F5;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+            width: 100%;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .address-section a.save-address-btn:hover {
+            background: #D4A017;
+            color: #1A2B4A;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header-menu ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-menu ul li {
+                margin: 10px 0;
+            }
+
+            .header-menu ul li a {
+                font-size: 1rem;
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Menu -->
+    <div class="main-header">
+        <h1>BAJRANG FASHION</h1>
+
+    </div>
+
+    <div class="container">
+        <!-- Address Form Section -->
+        <div class="address-section">
+            <h1>Delivery Information</h1>
+            <form>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="full-name">Full Name</label>
+                        <input type="text" id="full-name" name="full_name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="address">Delivery Address</label>
+                        <textarea id="address" name="address" placeholder="Enter your full address (e.g., house number, street, landmark)" required></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city" placeholder="Enter your city" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="state">State</label>
+                        <select id="state" name="state" required>
+                            <option value="" disabled selected>Select your state</option>
+                            <option value="Andhra Pradesh">Andhra Pradesh</option>
+                            <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                            <option value="Assam">Assam</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Chhattisgarh">Chhattisgarh</option>
+                            <option value="Goa">Goa</option>
+                            <option value="Gujarat">Gujarat</option>
+                            <option value="Haryana">Haryana</option>
+                            <option value="Himachal Pradesh">Himachal Pradesh</option>
+                            <option value="Jharkhand">Jharkhand</option>
+                            <option value="Karnataka">Karnataka</option>
+                            <option value="Kerala">Kerala</option>
+                            <option value="Madhya Pradesh">Madhya Pradesh</option>
+                            <option value="Maharashtra">Maharashtra</option>
+                            <option value="Manipur">Manipur</option>
+                            <option value="Meghalaya">Meghalaya</option>
+                            <option value="Mizoram">Mizoram</option>
+                            <option value="Nagaland">Nagaland</option>
+                            <option value="Odisha">Odisha</option>
+                            <option value="Punjab">Punjab</option>
+                            <option value="Rajasthan">Rajasthan</option>
+                            <option value="Sikkim">Sikkim</option>
+                            <option value="Tamil Nadu">Tamil Nadu</option>
+                            <option value="Telangana">Telangana</option>
+                            <option value="Tripura">Tripura</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Uttarakhand">Uttarakhand</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="pincode">Pincode</label>
+                        <input type="text" id="pincode" name="pincode" placeholder="Enter your pincode" pattern="[0-9]{6}" required>
+                    </div>
+                </div>
+                <a href="payment.html" class="save-address-btn">Save Address</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

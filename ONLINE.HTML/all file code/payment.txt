@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Complete your payment with Bajrang Fashion using UPI or Cash on Delivery.">
+    <meta name="keywords" content="Bajrang Fashion, payment, UPI, cash on delivery, sustainable clothing, Indian fashion">
+    <meta name="author" content="Bajrang Fashion">
+    <title>BAJRANG FASHION - Payment</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Arial', Helvetica, sans-serif;
+            background-color: #F5F5F5;
+            color: #1A2B4A;
+            margin: 0;
+        }
+
+        /* Header Styling */
+        .main-header {
+            background: #1A2B4A;
+            color: #D4A017;
+            padding: 20px;
+            text-align: center;
+            animation: slideInDown 0.8s ease-in-out;
+        }
+
+        .main-header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Menu Styling */
+        .header-menu {
+            background: rgba(26, 43, 74, 0.9);
+            padding: 10px 0;
+        }
+
+        .header-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .header-menu ul li {
+            margin: 0 15px;
+        }
+
+        .header-menu ul li a {
+            color: #F5F5F5;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+        }
+
+        .header-menu ul li a:hover,
+        .header-menu ul li a.active {
+            background: #D4A017;
+            color: #1A2B4A;
+            border-radius: 5px;
+        }
+
+        /* Payment Section Styling */
+        .payment-section {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px 0;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .payment-section h1 {
+            color: #1A2B4A;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .payment-section label {
+            font-weight: bold;
+            color: #1A2B4A;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .payment-section input,
+        .payment-section select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #6B7280;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: #F5F5F5;
+            color: #1A2B4A;
+        }
+
+        .payment-section a.confirm-payment-btn {
+            background: #1A2B4A;
+            color: #F5F5F5;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease;
+            width: 100%;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .payment-section a.confirm-payment-btn:hover {
+            background: #D4A017;
+            color: #1A2B4A;
+        }
+
+        /* Order Summary Styling */
+        .order-summary {
+            background: #E5E7EB;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .order-summary h3 {
+            color: #1A2B4A;
+            margin-bottom: 15px;
+        }
+
+        .order-summary p {
+            margin: 5px 0;
+            font-size: 1rem;
+        }
+
+        /* QR Code Styling */
+        .qr-code-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .qr-code-container img {
+            max-width: 200px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Total Amount Styling */
+        .total-amount {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1A2B4A;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header-menu ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-menu ul li {
+                margin: 10px 0;
+            }
+
+            .header-menu ul li a {
+                font-size: 1rem;
+                padding: 8px 10px;
+            }
+
+            .qr-code-container img {
+                max-width: 150px;
+            }
+
+            .total-amount {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Menu -->
+    <div class="main-header">
+        <h1>BAJRANG FASHION</h1>
+
+    </div>
+
+    <div class="container">
+        <!-- Payment Section -->
+        <div class="payment-section">
+            <h1>Complete Your Payment</h1>
+            <!-- Order Summary -->
+            <div class="order-summary">
+                <h3>Order Summary</h3>
+                <div id="order-details">
+                    <p><strong>Product 1:</strong> <span id="product1-name">Select a product</span> - <span id="product1-price">₹0</span> x <span id="product1-quantity">0</span></p>
+                    <p><strong>Product 2:</strong> <span id="product2-name">Select a product</span> - <span id="product2-price">₹0</span> x <span id="product2-quantity">0</span></p>
+                    <p><strong>Total:</strong> <span id="total-price">₹0</span></p>
+                </div>
+            </div>
+            <!-- Payment Form -->
+            <form id="payment-form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="product1">Select First Product</label>
+                        <select id="product1" name="product1" onchange="updateTotal()" required>
+                            <option value="" disabled selected>Select a product</option>
+                            <option value="Black T-Shirt-300">Black T-Shirt - ₹300</option>
+                            <option value="Gray T-Shirt-300">Gray T-Shirt - ₹300</option>
+                            <option value="Pink T-Shirt-300">Pink T-Shirt - ₹300</option>
+                            <option value="White T-Shirt-300">White T-Shirt - ₹300</option>
+                            <option value="Jeans-500">Jeans - ₹500</option>
+                            <option value="Denim Jeans Jacket-1200">Denim Jeans Jacket - ₹1200</option>
+                            <option value="Baggy Jeans-800">Baggy Jeans - ₹800</option>
+                            <option value="Jeans-800">Jeans - ₹800</option>
+                            <option value="Ultimate Watch-1200">Ultimate Watch - ₹1200</option>
+                            <option value="Premium Watch-4500">Premium Watch - ₹4500</option>
+                            <option value="Watch-800">Watch - ₹800</option>
+                            <option value="Leather Belt-950">Leather Belt - ₹950</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="quantity1">Quantity</label>
+                        <input type="number" id="quantity1" name="quantity1" min="0" value="1" onchange="updateTotal()" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="product2">Select Second Product (Optional)</label>
+                        <select id="product2" name="product2" onchange="updateTotal()">
+                            <option value="" selected>None</option>
+                            <option value="Black T-Shirt-300">Black T-Shirt - ₹300</option>
+                            <option value="Gray T-Shirt-300">Gray T-Shirt - ₹300</option>
+                            <option value="Pink T-Shirt-300">Pink T-Shirt - ₹300</option>
+                            <option value="White T-Shirt-300">White T-Shirt - ₹300</option>
+                            <option value="Jeans-500">Jeans - ₹500</option>
+                            <option value="Denim Jeans Jacket-1200">Denim Jeans Jacket - ₹1200</option>
+                            <option value="Baggy Jeans-800">Baggy Jeans - ₹800</option>
+                            <option value="Jeans-800">Jeans - ₹800</option>
+                            <option value="Ultimate Watch-1200">Ultimate Watch - ₹1200</option>
+                            <option value="Premium Watch-4500">Premium Watch - ₹4500</option>
+                            <option value="Watch-800">Watch - ₹800</option>
+                            <option value="Leather Belt-950">Leather Belt - ₹950</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="quantity2">Quantity</label>
+                        <input type="number" id="quantity2" name="quantity2" min="0" value="0" onchange="updateTotal()">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label>Payment Method</label>
+                        <div>
+                            <input type="radio" id="upi" name="payment_method" value="upi" onchange="togglePaymentFields()" required>
+                            <label for="upi">UPI</label>
+                            <input type="radio" id="cod" name="payment_method" value="cod" onchange="togglePaymentFields()">
+                            <label for="cod">Cash on Delivery</label>
+                        </div>
+                    </div>
+                </div>
+                <div id="upi-fields" style="display: none;">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="upi-id">UPI ID</label>
+                            <input type="text" id="upi-id" name="upi_id" placeholder="Enter your UPI ID (e.g., user@upi)">
+                        </div>
+                    </div>
+                    <div class="qr-code-container">
+                        <p>Scan the QR code to pay via UPI:</p>
+                        <img src="9888.jpg" alt="UPI QR Code">
+                    </div>
+                </div>
+                <div class="total-amount">
+                    Total: <span id="total-price-display">₹0</span>
+                </div>
+                <a href="conform.html" class="confirm-payment-btn" onclick="redirectToConfirmation()">Confirm Payment</a>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Product price mapping
+        const productPrices = {
+            "Black T-Shirt-300": 300,
+            "Gray T-Shirt-300": 300,
+            "Pink T-Shirt-300": 300,
+            "White T-Shirt-300": 300,
+            "Jeans-500": 500,
+            "Denim Jeans Jacket-1200": 1200,
+            "Baggy Jeans-800": 800,
+            "Jeans-800": 800,
+            "Ultimate Watch-1200": 1200,
+            "Premium Watch-4500": 4500,
+            "Watch-800": 800,
+            "Leather Belt-950": 950
+        };
+
+        // Function to update order summary and total
+        function updateTotal() {
+            const product1 = document.getElementById('product1').value;
+            const quantity1 = parseInt(document.getElementById('quantity1').value) || 0;
+            const product2 = document.getElementById('product2').value;
+            const quantity2 = parseInt(document.getElementById('quantity2').value) || 0;
+
+            // Update product 1 details
+            document.getElementById('product1-name').textContent = product1 ? product1.split('-')[0] : 'Select a product';
+            document.getElementById('product1-price').textContent = product1 ? `₹${productPrices[product1]}` : '₹0';
+            document.getElementById('product1-quantity').textContent = quantity1;
+
+            // Update product 2 details
+            document.getElementById('product2-name').textContent = product2 ? product2.split('-')[0] : 'None';
+            document.getElementById('product2-price').textContent = product2 ? `₹${productPrices[product2]}` : '₹0';
+            document.getElementById('product2-quantity').textContent = quantity2;
+
+            // Calculate total
+            const total = (product1 ? productPrices[product1] * quantity1 : 0) + (product2 ? productPrices[product2] * quantity2 : 0);
+            document.getElementById('total-price').textContent = `₹${total}`;
+            document.getElementById('total-price-display').textContent = `₹${total}`;
+        }
+
+        // Function to toggle UPI fields based on payment method
+        function togglePaymentFields() {
+            const upiFields = document.getElementById('upi-fields');
+            const upiRadio = document.getElementById('upi');
+            const upiInput = document.getElementById('upi-id');
+            upiFields.style.display = upiRadio.checked ? 'block' : 'none';
+            upiInput.required = upiRadio.checked;
+        }
+
+        // Function to redirect to confirmation page with order details
+        function redirectToConfirmation() {
+            const product1 = document.getElementById('product1').value;
+            const quantity1 = document.getElementById('quantity1').value;
+            const product2 = document.getElementById('product2').value;
+            const quantity2 = document.getElementById('quantity2').value;
+            const paymentMethod = document.querySelector('input[name="payment_method"]:checked')?.value;
+
+            // Basic validation
+            if (!product1 || !quantity1 || !paymentMethod) {
+                alert('Please select a product, quantity, and payment method.');
+                return;
+            }
+
+            // Construct URL with query parameters
+            const params = new URLSearchParams();
+            if (product1) params.append('product1', product1);
+            if (quantity1) params.append('quantity1', quantity1);
+            if (product2) params.append('product2', product2);
+            if (quantity2) params.append('quantity2', quantity2);
+            if (paymentMethod) params.append('payment_method', paymentMethod);
+
+            window.location.href = `confirmation.html?${params.toString()}`;
+        }
+
+        // Initialize total and payment fields on page load
+        updateTotal();
+        togglePaymentFields();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
